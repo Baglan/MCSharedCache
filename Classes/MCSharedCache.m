@@ -33,7 +33,9 @@
 
 - (void)onLowMemory
 {
-    NSLog(@"--- onLowMemory");
+#if DEBUG
+    NSLog(@"[MCSharedCache onLowMemory]: Cache purged after receiving the UIApplicationDidReceiveMemoryWarningNotification");
+#endif
     [self removeAllObjects];
 }
 

@@ -21,7 +21,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [[MCSharedCache sharedInstance] setObject:@"content" forKey:@"key"];
-    NSLog(@"--- %@", [[MCSharedCache sharedInstance] objectForKey:@"key"]);
+    NSLog(@"--- Added '%@' for 'key'\nSimulate low memory to purge", [[MCSharedCache sharedInstance] objectForKey:@"key"]);
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MCSharedCache.h"
 
 @interface ViewController ()
 
@@ -18,12 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [[MCSharedCache sharedInstance] setObject:@"content" forKey:@"key"];
+    NSLog(@"--- %@", [[MCSharedCache sharedInstance] objectForKey:@"key"]);
 }
 
 @end
